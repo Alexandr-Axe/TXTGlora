@@ -1,0 +1,19 @@
+﻿<Window x:Class="TXT.NajitText"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TXT"
+        mc:Ignorable="d"
+        Title="Najdi text" Height="180" Width="440"
+        ResizeMode="NoResize">
+    <Grid>
+        <Label FontSize="12" Content="Najít :"/>
+        <Button x:Name="findbutton" Content="Najít" Width="50" Height="23" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,4,33,114" Click="Find_Click"/>
+        <TextBox x:Name="findtext" HorizontalAlignment="Left" Height="23" Margin="42,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <Button x:Name="replacebutton" Content="Nahradit" Width="50" Height="23" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,45,33,73" Click="Find_Click"/>
+        <TextBox x:Name="replacetext" HorizontalAlignment="Left" Height="23" Margin="62,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <Label x:Name="nahradit" Content="Nahradit :" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

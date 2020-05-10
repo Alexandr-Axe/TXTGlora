@@ -1,0 +1,34 @@
+﻿<Window x:Class="TXT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TXT"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Icon="C:\Users\Alex\Desktop\TXT\TXT\Assety\finTxt.ico"
+        Title="" Height="360" Width="410" MinWidth="410" MinHeight="360"
+        KeyDown="Window_KeyDown"
+        Closing="Window_Closing">
+    <Grid>
+        <RichTextBox x:Name="TextSouboru" Margin="0,20,0,0" FontSize="13" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Visible" TextChanged="TextSouboru_TextChanged" Block.LineHeight="3"/>
+        <ComboBox x:Name="kombik" Height="100" Width="100" Visibility="Hidden"/>
+        <Menu x:Name="zkouska" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="White">
+            <MenuItem Header="Soubor">
+                <MenuItem Header="Nový" Click="MenuItem_Soubor_Click"/>
+                <MenuItem Header="Otevřít..." Click="MenuItem_Soubor_Click"/>
+                <MenuItem Header="Uložit" Click="MenuItem_Soubor_Click"/>
+                <MenuItem Header="Tisk..." Click="MenuItem_Soubor_Click"/>
+                <MenuItem Header="Ukončit" Click="MenuItem_Soubor_Click"/>
+            </MenuItem>
+            <MenuItem Header="Úpravy">
+                <MenuItem Header="Najít..." Click="MenuItem_Upravy_Click"/>
+                <MenuItem Header="Nahradit..." Click="MenuItem_Upravy_Click"/>
+            </MenuItem>
+            <MenuItem Header="Čas" Click="Cas"/>
+            <MenuItem Header="Obnovit výchozí" Click="MenuItem_Zobrazeni_Click"/>
+            <MenuItem Header="+" Click="MenuItem_Zobrazeni_Click"/>
+            <MenuItem Header="-" Click="MenuItem_Zobrazeni_Click"/>
+        </Menu>
+    </Grid>
+</Window>
