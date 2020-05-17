@@ -26,6 +26,8 @@ namespace TXT
     {
         public bool Ulozeno = true;
         public static RichTextBox TextMainWindow;
+        public static string TextRTB = string.Empty;
+        public static string NewRTB = string.Empty;
         OpenFileDialog ofd = new OpenFileDialog() { Filter = "Textový dokument Glora (*.gte)|*.gte|Poznámkový blok (*.txt)|*.txt|Microsoft Word (*.docx)|*.docx|Všechny soubory (*.*)|*.*" };
         SaveFileDialog sfd = new SaveFileDialog() { Filter = "Textový dokument Glora (*.gte)|*.gte|Poznámkový blok (*.txt)|*.txt|Microsoft Word (*.docx)|*.docx|Všechny soubory (*.*)|*.*" };
         NajitText NT = new NajitText();
@@ -146,12 +148,14 @@ namespace TXT
         private void Cas(object sender, RoutedEventArgs e)
         {
             TextMainWindow = RTB.GetTime(TextMainWindow);
+            NewRTB = RTB.GetText(TextMainWindow);
         }
 
         private void TextSouboru_TextChanged(object sender, TextChangedEventArgs e)
         {
             Ulozeno = false;
             TextSouboru = TextMainWindow;
+            TextRTB = RTB.GetText(TextMainWindow);
         }
 
         private void MenuItem_Zobrazeni_Click(object sender, RoutedEventArgs e)
@@ -238,4 +242,23 @@ namespace TXT
             }
         }
     }
-} 
+    public class IsText
+    {
+        public string ProhlizetText { get; set; }
+        public bool ProhlizeTextIsTrueFalse(string p)
+        {
+            if (p == null) return false;
+            return true;
+        }
+        public bool TextNalezenTrueFalse(string a, string b)
+        {
+            if (a == b) return true;
+            return false;
+        }
+        public bool CasPridanTrueFalse(string a, string b)
+        {
+            if (a != b) return true;
+            return false;
+        }
+    }
+}

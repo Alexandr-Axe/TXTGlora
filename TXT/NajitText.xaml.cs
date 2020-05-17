@@ -29,7 +29,7 @@ namespace TXT
             InitializeComponent();
             findtext.Focus();
         }
-
+        public static string textVOkne = string.Empty;
         private void Find_Click(object sender, RoutedEventArgs e)
         {
             Button Tenhle = (Button)sender;
@@ -44,6 +44,11 @@ namespace TXT
                 else MessageBox.Show($"Textové pole je prázdné!", "Text nebyl nalezen", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
             else MainWindow.TextMainWindow.Document = RTB.ReplaceWord(MainWindow.TextMainWindow, findtext.Text, replacetext.Text);
+        }
+
+        private void Findtext_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            textVOkne = findtext.Text;
         }
     }
 }
